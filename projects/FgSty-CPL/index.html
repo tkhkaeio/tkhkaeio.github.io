@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Foreground-Aware Stylization and Consensus Pseudo-Labeling for Domain Adaptation of First-Person Hand Segmentation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="Foreground-Aware Stylization and Consensus Pseudo-Labeling for Domain Adaptation of First-Person Hand Segmentation">
+	<meta property="og:url" content="https://tkhkaeio.github.io/projects/FgSty-CPL/">
+	<!-- jQuery -->
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<br>
+				<h1>Foreground-Aware Stylization and Consensus Pseudo-Labeling for Domain Adaptation of First-Person Hand Segmentation</h1>
+				<br>
+				<h4>Takehiko&nbsp;Ohkawa<sup>1,2</sup> &emsp;Takuma&nbsp;Yagi<sup>1</sup> &emsp; Atsushi&nbsp;Hashimoto<sup>2</sup> &emsp; Yoshitaka&nbsp;Ushiku<sup>2</sup> &emsp; Yoichi&nbsp;Sato<sup>1</sup>
+                </h4>
+			</div>
+			<div class="col-xs-12 text-center">
+                <h4><sup>1</sup>The&nbsp;University&nbsp;of&nbsp;Tokyo &emsp; <sup>2</sup>OMRON&nbsp;SINIC&nbsp;X &emsp;</h4>
+			</div>
+            <div>
+            <div class="col-xs-12 text-center">
+                <h4><a href="XXX">[Paper]</a><a href="https://github.com/ut-vision/FgSty-CPL"> [Data & Code]</a></h4>
+            </div>
+            </div>
+
+    <br>
+
+		</div>
+		<br>
+		<br>
+		<br>
+		
+    <div class="row">
+			<div class="col-xs-12">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+                        <!-- <figure>
+						<img src="demo.gif">
+                        <figcaption>Left: Unadapted prediction, Right: Adapted prediction (<b>Ours</b>)</figcaption>
+                        </figure> -->
+                        <iframe width="800" height="300" src="https://www.youtube.com/embed/Pwucvy40T0I" frameborder="0" allow="accelerometer; autoplay; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+					</div>
+                    <div class="col-xs-12 text-center">
+                        
+                    </div>
+				</div>
+			</div>
+		</div>
+		
+    <div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Abstract</h3>
+				<p >Hand segmentation is a crucial task in first-person vision. 
+                    Since first-person images exhibit strong bias in appearance among different environments, adapting a pre-trained segmentation model to a new domain is required in hand segmentation.
+                    Here, we focus on appearance gaps for hand regions and backgrounds separately.
+                    We propose (i) foreground-aware image stylization and (ii) consensus pseudo-labeling for domain adaptation of hand segmentation.
+                    We stylize source images independently for the foreground and background using target images as style.
+                    To resolve the domain shift that the stylization has not addressed, we apply careful pseudo-labeling by taking a consensus between the models trained on the source and stylized source images.
+                    We validated our method on domain adaptation of hand segmentation from real and simulation images. Our method achieved state-of-the-art performance in both settings.
+                    We also demonstrated promising results in challenging multi-target domain adaptation and domain generalization settings.
+				</p>
+                <div class="col-xs-12 text-center">
+                    <img src="https://user-images.githubusercontent.com/28190044/123925072-851d3280-d9c5-11eb-907e-70dd17d0225d.jpg" width="600">
+                </div>
+			</div>
+		</div>
+    
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Overview</h3>
+            <p >First, we stylize source images as the style of target images separately for the foreground and background, which alleviates appearance gaps of first-person images effectively. We then create a style-adapted dataset with target styles and source labels.
+                Next, we prepare two networks for hand segmentation: a reference model R and a segmentation model M. Both networks are trained on the source dataset and the style-adapted source dataset, respectively. To adapt the segmentation model M to the target domain, we generate target pseudo-labels with a consensus scheme of the two networks. Given two predictions on the same target instance from both networks, we take an intersection of the two predictions and accept it as a pseudo-label when mIoU with the two predictions surpasses a certain threshold. The agreed pseudo-labels are used to update the segmentation model M.
+            </p>
+            <div class="col-xs-12 text-center">
+                <img src="https://user-images.githubusercontent.com/28190044/123925051-7fbfe800-d9c5-11eb-9014-4926819db1ba.jpg" width="800">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Results</h3>
+            <p >We validated our approach in real-to-real adaptation and sim-to-real adaptation settings. Our method outperformed comparison methods significantly.<br>
+                Source: EGTEA, Ego2Hands, ObMan-Ego <br>
+                Target: GTEA, EDSH, UTG, YHG <br>
+                Evaluation: mIoU <br>
+            </p>
+            <div class="col-xs-12 text-center">
+                <img src="https://user-images.githubusercontent.com/28190044/123925065-82bad880-d9c5-11eb-9b41-8147026a7d18.jpg" width="800">
+            </div>
+        </div>
+    </div>
+
+		<div class="row">
+      <div class="col-xs-12 text-left">
+        <h3>BibTeX</h3>
+      <pre>
+@article{ohkawa21hsda,
+    title = {Foreground-Aware Stylization and Consensus Pseudo-Labeling for Domain Adaptation of First-Person Hand Segmentation},
+    author = {Ohkawa, Takehiko and Yagi, Takuma and Hashimoto, Atsushi and Ushiku, Yoshitaka and Sato, Yoichi},
+    year = {2021},
+    pages = {XXX--YYY},
+    volume = {ZZ},
+    journal = {IEEE Access},
+    }
+      </pre>
+    </div>
+    </div>
+
+  </div>
+
+
+
+	<style type="text/css">
+.container {
+	background-color: #FFFFFF;
+}
+.teaser-img {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.img-responsive {
+	margin: auto;
+}
+
+.vidcontainer{
+    width: 256px;
+    height: 256px;
+    overflow:hidden;
+}
+#glass{
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+	</style>
+</body>
+</html>
