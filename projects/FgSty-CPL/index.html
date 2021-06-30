@@ -62,7 +62,7 @@
     <div class="row">
 			<div class="col-xs-12 text-left">
 				<h3>Abstract</h3>
-				<p >Hand segmentation is a crucial task in first-person vision. 
+				<p style="font-size: 16px">Hand segmentation is a crucial task in first-person vision. 
                     Since first-person images exhibit strong bias in appearance among different environments, adapting a pre-trained segmentation model to a new domain is required in hand segmentation.
                     Here, we focus on appearance gaps for hand regions and backgrounds separately.
                     We propose (i) foreground-aware image stylization and (ii) consensus pseudo-labeling for domain adaptation of hand segmentation.
@@ -80,7 +80,7 @@
     <div class="row">
         <div class="col-xs-12 text-left">
             <h3>Overview</h3>
-            <p >First, we stylize source images as the style of target images separately for the foreground and background, which alleviates appearance gaps of first-person images effectively. We then create a style-adapted dataset with target styles and source labels.
+            <p style="font-size: 16px">Our semi-supervised domain adaptation method for hand segmentation consists of (i) foreground-aware image stylization and (ii) consensus pseudo-labeling. First, we stylize source images as the style of target images separately for the foreground and background, which alleviates appearance gaps of first-person images effectively. We then create a style-adapted dataset with target styles and source labels.
                 Next, we prepare two networks for hand segmentation: a reference model R and a segmentation model M. Both networks are trained on the source dataset and the style-adapted source dataset, respectively. To adapt the segmentation model M to the target domain, we generate target pseudo-labels with a consensus scheme of the two networks. Given two predictions on the same target instance from both networks, we take an intersection of the two predictions and accept it as a pseudo-label when mIoU with the two predictions surpasses a certain threshold. The agreed pseudo-labels are used to update the segmentation model M.
             </p>
             <div class="col-xs-12 text-center">
@@ -92,7 +92,7 @@
     <div class="row">
         <div class="col-xs-12 text-left">
             <h3>Results</h3>
-            <p >We validated our approach in real-to-real adaptation and sim-to-real adaptation settings. Our method outperformed comparison methods significantly.<br>
+            <p style="font-size: 16px">We validated our approach in real-to-real adaptation and sim-to-real adaptation settings. Our method outperformed comparison methods significantly.<br>
                 Source: EGTEA, Ego2Hands, ObMan-Ego <br>
                 Target: GTEA, EDSH, UTG, YHG <br>
                 Evaluation: mIoU <br>
