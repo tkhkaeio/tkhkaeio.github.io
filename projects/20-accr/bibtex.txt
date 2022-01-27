@@ -1,5 +1,5 @@
-@inproceedings{ohkawa20accr,
- title={{Augmented Cyclic Consistency Regularization for Unpaired Image-to-Image Translation}},
+@inproceedings{ohkawa:icpr20,
+ title={Augmented Cyclic Consistency Regularization for Unpaired Image-to-Image Translation},
  author={Ohkawa, Takehiko and Inoue, Naoto and Kataoka, Hirokatsu and Inoue, Nakamasa},
  booktitle={Proceedings of the International Conference on Pattern Recognition (ICPR)},
  pages={362--369},
