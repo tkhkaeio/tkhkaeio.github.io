@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Domain Adaptive Hand Keypoint and Pixel Localization in the Wild</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="Foreground-Aware Stylization and Consensus Pseudo-Labeling for Domain Adaptation of First-Person Hand Segmentation">
+	<meta property="og:url" content="https://tkhkaeio.github.io/projects/FgSty-CPL/">
+	<!-- jQuery -->
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<br>
+				<h1>Domain Adaptive Hand Keypoint and Pixel Localization in the Wild</h1>
+				<br>
+				<h4>Takehiko&nbsp;Ohkawa<sup>1,2</sup> &emsp; Yu-Jhe&nbsp;Li<sup>2</sup> &emsp; Qichen&nbsp;Fu<sup>2</sup> &emsp; Ryosuke&nbsp;Furuta<sup>1</sup> &emsp; Kris&nbsp;M.&nbsp;Kitani<sup>2</sup> &emsp; Yoichi&nbsp;Sato<sup>1</sup>
+                </h4>
+			</div>
+			<div class="col-xs-12 text-center">
+                <h4><sup>1</sup>The&nbsp;University&nbsp;of&nbsp;Tokyo &emsp; <sup>2</sup>Carnegie&nbsp;Mellon&nbsp;University &emsp;</h4>
+			</div>
+            <div class="col-xs-12 text-center">
+                <h4>arXiv 2022</h4>
+			</div>
+            <div class="col-xs-12 text-center">
+                <h4><a href="https://arxiv.org/abs/2203.08344" style="font-size: 14pt;">[Paper]</a></h4>
+                    <!-- <a href="https://github.com/ut-vision/XXXX" style="font-size: 14pt;"> [Data & Code]</a></h4> -->
+            </div>
+
+    <br>
+
+		</div>
+		<br>
+		<br>
+		<br>
+		
+    <div class="row">
+			<div class="col-xs-12">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+                        <!-- <iframe width="800" height="300" src="" frameborder="0"></iframe> -->
+                        <div class="col-xs-12 text-center">
+                            <img src="https://user-images.githubusercontent.com/28190044/158919837-4cb6c3d0-3cf1-4e82-a863-e2677b8c15dc.png" width="700"></div>
+					</div>
+                    <div class="col-xs-12 text-center">
+                        
+                    </div>
+				</div>
+			</div>
+		</div>
+		
+    <div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Abstract</h3>
+				<p style="font-size: 16px">We aim to improve the performance of regressing hand keypoints and segmenting pixel-level hand masks under new imaging conditions (e.g., outdoors) when we only have labeled images taken under very different conditions (e.g., indoors). 
+                In the real world, it is important that the model trained for both tasks works under various imaging conditions. 
+                However, their variation covered by existing labeled hand datasets is limited.
+                Thus, it is necessary to adapt the model trained on the labeled images (source) to unlabeled images (target) with unseen imaging conditions. 
+                While self-training domain adaptation methods (i.e., learning from the unlabeled target images in a self-supervised manner) have been developed for both tasks, their training may degrade performance when the predictions on the target images are noisy. 
+                To avoid this, it is crucial to assign a low importance (confidence) weight to the noisy predictions during self-training. 
+                In this paper, we propose to utilize the divergence of two predictions to estimate the confidence of the target image for both tasks.
+                These predictions are given from two separate networks, and their divergence helps identify the noisy predictions. 
+                To integrate our proposed confidence estimation into self-training, we propose a teacher-student framework where the two networks (teachers) provide supervision to a network (student) for self-training, and the teachers are learned from the student by knowledge distillation. 
+                Our experiments show its superiority over state-of-the-art methods in adaptation settings with different lighting, grasping objects, backgrounds, and camera viewpoints. 
+                Our method improves by 4% the multi-task score on HO3D compared to the latest adversarial adaptation method. 
+                We also validate our method on Ego4D, egocentric videos with rapid changes in imaging conditions outdoors.
+				</p>
+			</div>
+		</div>
+    
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Overview</h3>
+            <p style="font-size: 16px">We present our proposed self-training domain adaptation with confidence  estimation for adapting both hand keypoint regression and hand segmentation. 
+            Our method consists of two different networks (teachers) for confidence estimation and another network (student) for self-training of both tasks. 
+            The student training is based on confidence-aware consistency training under geometric augmentation. 
+            The student learns from the consistency between its prediction for augmented target data and the two teachers' predictions for unaugmented target data.
+            The training is weighted by the target confidence computed by the divergence of both teachers.
+            The teachers are trained with knowledge distillation so that each teacher independently learns to match the student's predictions.
+            </p>
+            <div class="col-xs-12 text-center">
+                <img src="https://user-images.githubusercontent.com/28190044/158920529-ddfb0c26-5f55-4276-908c-a0fd18c0ebc4.png" width="700">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Results</h3>
+            <p style="font-size: 16px">Our method can successfully adapt to in-the-wild egocentric videos (Ego4D) that have different imaging conditions from the source domain and lack the annotation of hand keypoints and pixels.
+            The bellow figure shows the adaptation results on outdoor scenarios.
+            Please check our paper for further results and comparisons.
+            </p>
+            <div class="col-xs-12 text-center">
+                <img src="https://user-images.githubusercontent.com/28190044/159077524-351e16f0-8ed9-4cc6-95bf-d5d07ca27c6f.png" width="700">
+
+                
+            </div>
+        </div>
+    </div>
+
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+          <td style="padding:0px">
+            <br>
+            <p style="text-align:right;font-size:small;float:right;">
+              © Takehiko Ohkawa 2022
+            </p>
+            <p style="text-align:left;font-size:small;">
+                <a href="https://tkhkaeio.github.io/">< Home</a>
+            </p>
+          </td>
+        </tr>
+      </tbody></table>
+
+  </div>
+
+</body>
+</html>
