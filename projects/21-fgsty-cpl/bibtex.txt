@@ -1,8 +1,8 @@
 @article{ohkawa:access21,
-    title = {Foreground-Aware Stylization and Consensus Pseudo-Labeling for Domain Adaptation of First-Person Hand Segmentation},
-    author = {Ohkawa, Takehiko and Yagi, Takuma and Hashimoto, Atsushi and Ushiku, Yoshitaka and Sato, Yoichi},
+    title   = {Foreground-Aware Stylization and Consensus Pseudo-Labeling for Domain Adaptation of First-Person Hand Segmentation},
+    author  = {Ohkawa, Takehiko and Yagi, Takuma and Hashimoto, Atsushi and Ushiku, Yoshitaka and Sato, Yoichi},
     journal = {IEEE Access},
-    volume = {9},
-    pages = {94644--94655},
-    year = {2021},
+    volume  = {9},
+    pages   = {94644--94655},
+    year    = {2021},
 }

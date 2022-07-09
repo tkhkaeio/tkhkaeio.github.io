@@ -6,6 +6,7 @@
   src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* latin */
 @font-face {
   font-family: 'Lato';
@@ -14,6 +15,7 @@
   src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -22,6 +24,7 @@
   src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* latin */
 @font-face {
   font-family: 'Lato';
@@ -30,6 +33,7 @@
   src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -38,6 +42,7 @@
   src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* latin */
 @font-face {
   font-family: 'Lato';
@@ -46,6 +51,7 @@
   src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -54,6 +60,7 @@
   src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* latin */
 @font-face {
   font-family: 'Lato';
@@ -64,27 +71,27 @@
 }
 
 figure {
-    border: thin #c0c0c0 solid;
-    display: flex;
-    flex-flow: column;
-    padding: 0px;
-    max-width: 800px;
-    /* margin: auto; */
+  border: thin #c0c0c0 solid;
+  display: flex;
+  flex-flow: column;
+  padding: 0px;
+  max-width: 800px;
+  /* margin: auto; */
 }
 
 img {
-    max-width: 800px;
-    /* max-height: 800px; */
+  max-width: 800px;
+  /* max-height: 800px; */
 }
 
 figcaption {
-    background-color: #222;
-    /* opacity: 0.7; */
-    color: #fff;
-    font: italic smaller sans-serif;
-    padding: 5px;
-    line-height: 20px;
-    text-align: center;
+  background-color: #222;
+  /* opacity: 0.7; */
+  color: #fff;
+  font: italic smaller sans-serif;
+  padding: 5px;
+  line-height: 20px;
+  text-align: center;
 }
 
 
@@ -106,7 +113,7 @@ tr,
 p,
 a {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px
+  font-size: 14px;
 }
 
 strong {
@@ -120,8 +127,8 @@ heading {
 }
 
 subheading {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 18px;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 18px;
 }
 
 papertitle {
@@ -158,4 +165,67 @@ name {
 
 span.highlight {
   background-color: #ffffd0;
+}
+
+.open {
+  cursor: pointer;
+}
+
+[class^="#pop-up"] {
+  display: none;
+}
+:checked+.overlay {
+  display: block;
+  z-index: 9999;
+  background-color: #00000070;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  display: none;
+}
+
+.bibtex {
+  width: 700px;
+}
+
+.window {
+  width: 750px;
+  /* max-width: 600px; */
+  height: 220px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* overflow-x: scroll;  */
+}
+
+.text {
+  font-size: 18px;
+  margin: 0;
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 20px;
+}
+
+ul {
+  margin: -10px 0;
+}
+li{
+  padding-top: 0px;
+  margin: 4px 0;
 }
