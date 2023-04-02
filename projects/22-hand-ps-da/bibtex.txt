@@ -2,6 +2,6 @@
     title     = {Domain Adaptive Hand Keypoint and Pixel Localization in the Wild},
     author    = {Takehiko Ohkawa and Yu-Jhe Li and Qichen Fu and Ryosuke Furuta and Kris M. Kitani and Yoichi Sato},
     booktitle = {Proceedings of the European Conference on Computer Vision (ECCV)},
-    pages     = {XX--YY},
+    pages     = {68–-87},
     year      = {2022},
 }
