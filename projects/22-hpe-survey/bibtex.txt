@@ -1,7 +1,7 @@
-@article{ohkawa:arxiv22,
+@article{ohkawa:ijcv23,
     title     = {Efficient Annotation and Learning for 3D Hand Pose Estimation: A Survey},
     author    = {Takehiko Ohkawa and Ryosuke Furuta and Yoichi Sato},
-    journal   = {CoRR},
-    volume    = {abs/2206.02257},
-    year      = {2022},
+    journal   = {International Journal of Computer Vision (IJCV)},
+    volume    = {XX--XX},
+    year      = {2023},
 }
