@@ -2,6 +2,7 @@
     title     = {Efficient Annotation and Learning for 3D Hand Pose Estimation: A Survey},
     author    = {Takehiko Ohkawa and Ryosuke Furuta and Yoichi Sato},
     journal   = {International Journal of Computer Vision (IJCV)},
-    volume    = {XX--XX},
+    volume    = {131},
+    pages     = {3193-–3206},
     year      = {2023},
 }
