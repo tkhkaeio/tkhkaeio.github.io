@@ -1,0 +1,7 @@
+@inproceedings{liu:cvpr24,
+    title={Single-to-Dual-View Adaptation for Egocentric 3D Hand Pose Estimation}, 
+    author={Ruicong Liu and Takehiko Ohkawa and Mingfang Zhang and Yoichi Sato},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    pages={677--686},
+    year={2024},
+}
