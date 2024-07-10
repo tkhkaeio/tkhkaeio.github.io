@@ -300,7 +300,19 @@
                     <!-- <a href="xxxxx">project page</a> / -->
                     <a href="https://arxiv.org/abs/2403.04381">[Paper]</a>                    
                     <a href="https://github.com/ut-vision/S2DHand">[Code]</a>
-                    <a href="./projects/24-s2dhand/bibtex.txt">[BibTex]</a>
+                    <label class="open" for="pop-up-5"><a>[BibTex]</a></label>
+                    <input type="checkbox" id="pop-up-5" style="display: none;">
+                    <div class="overlay">
+                    <div class="window">
+                        <label class="close" for="pop-up-5">×</label>
+                        <div class="bibtex" id="bibtex-24-s2dhand"></div>
+                        <script>
+                        var filename = 'https://tkhkaeio.github.io/projects/24-s2dhand/bibtex.txt';
+                        load_text(filename, 'bibtex-24-s2dhand');
+                        </script>
+                    </div>
+                    </div>
+
                     <!-- <a href="https://www.youtube.com/watch?v=xxxx">video</a> -->
                     <p></p>
                     <p>
