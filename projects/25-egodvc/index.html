@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exo2EgoDVC: Dense Video Captioning of Egocentric Human Activities Using Web Instructional Videos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="Exo2EgoDVC: Dense Video Captioning of Egocentric Human Activities Using Web Instructional Videos">
+	<meta property="og:url" content="https://tkhkaeio.github.io/projects/25-egodvc/">
+	<!-- jQuery -->
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<br>
+				<h1>Exo2EgoDVC: Dense Video Captioning of Egocentric Human Activities Using Web Instructional Videos</h1>
+				<br>
+				<h4>Takehiko&nbsp;Ohkawa<sup>1,2*</sup> &emsp; Takuma&nbsp;Yagi<sup>3</sup> &emsp; Taichi&nbsp;Nishimura<sup>4</sup> &emsp; Ryosuke&nbsp;Furuta<sup>1</sup> &emsp; Atsushi&nbsp;Hashimoto<sup>2</sup> &emsp; Yoshitaka&nbsp;Ushiku<sup>2</sup> &emsp; Yoichi&nbsp;Sato<sup>1</sup></h4>                
+			</div>
+			<div class="col-xs-12 text-center">
+                <h4><sup>1</sup>The&nbsp;University&nbsp;of&nbsp;Tokyo &emsp; 
+                    <sup>2</sup>OMRON&nbsp;SINIC&nbsp;X&nbsp;Corp.&emsp; 
+                    <sup>3</sup>National&nbsp;Institute&nbsp;of&nbsp;Advanced&nbsp;Industrial&nbsp;Science&nbsp;and&nbsp;Technology&nbsp;(AIST)&emsp;
+                    <sup>4</sup>LY&nbsp;Corporation&emsp;<br>
+                    <sup>*</sup>Work done during an internship at OMRON SINIC X Corp.
+                </h4>
+			</div>
+            <div class="col-xs-12 text-center">
+                <h4>IEEE/CVF Winter Conference on Applications of Computer Vision (<b>WACV</b>), 2025</h4>
+			</div>
+            <div class="col-xs-12 text-center">
+                <h4>
+                    <a href="https://arxiv.org/abs/2311.16444" style="font-size: 14pt;">[Paper]</a>
+                    <a href="https://github.com/ut-vision/Exo2EgoDVC" style="font-size: 14pt;">[Data & Code]</a>
+                </h4>
+            </div>
+
+    <br>
+
+		</div>
+		<br>
+		<br>
+		<br>
+		
+    <div class="row">
+			<div class="col-xs-12">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+                        <!-- <iframe width="800" height="300" src="" frameborder="0"></iframe> -->
+                        <div class="col-xs-12 text-center">
+                            <img src="https://gist.github.com/user-attachments/assets/95e2fcda-5493-42c9-a767-ac75b0623b49" width="700"></div>
+					</div>
+                    <div class="col-xs-12 text-center">
+                        
+                    </div>
+				</div>
+			</div>
+		</div>
+		
+    <div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Abstract</h3>
+				<p style="font-size: 16px">We propose a novel benchmark for cross-view knowledge transfer of dense video captioning, adapting models from web instructional videos with exocentric views to an egocentric view. While dense video captioning (predicting time segments and their captions) is primarily studied with exocentric videos (e.g., YouCook2), benchmarks with egocentric videos are restricted due to data scarcity. To overcome the limited video availability, transferring knowledge from abundant exocentric web videos is demanded as a practical approach. However, learning the correspondence between exocentric and egocentric views is difficult due to their dynamic view changes. The web videos contain shots showing either full-body or hand regions, while the egocentric view is constantly shifting. This necessitates the in-depth study of cross-view transfer under complex view changes. To this end, we first create a real-life egocentric dataset (EgoYC2) whose captions follow the definition of YouCook2 captions, enabling transfer learning between these datasets with access to their ground-truth. To bridge the view gaps, we propose a view-invariant learning method using adversarial training, which consists of pre-training and fine-tuning stages. Our experiments confirm the effectiveness of overcoming the view change problem and knowledge transfer to egocentric views. Our benchmark pushes the study of cross-view transfer into a new task domain of dense video captioning and envisions methodologies that describe egocentric videos in natural language.
+				</p>
+			</div>
+		</div>
+    
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>EgoYC2 Dataset</h3>
+            <p style="font-size: 16px">
+            We newly collect an egocentric dense video captioning dataset, EgoYC2. The EgoYC2 captions follow the caption definition of YouCook2 (YC2). This ensures that the two datasets are uniform in caption content and granularity, and are evaluated consistently. Specifically, we directly adopt the procedural captions from YC2, describing the sequence of necessary steps to complete complex tasks. We then re-record these cooking videos by instructing participants wearing a head-mounted camera to cook while referring to the YC2’s captions (recipes). 
+            </p>
+            <div class="col-xs-12 text-center">
+                <iframe width="700" height="400" src="https://www.youtube.com/embed/Uq5gkYr0vto?autoplay=1&mute=1&showinfo=0&modestbranding=1&controls=0&disablekb=1&playsinline=1&loop=1&playlist=Uq5gkYr0vto" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Exo-to-Ego Transfer of Dense Video Captioning</h3>
+            <p style="font-size: 16px">
+                We aim to learn view-invariant features among the mixed source views and the unique egocentric view. We perform pre-training and fine-tuning separately to handle a larger domain gap. 
+                To address this, we employ a "divide-and-conquer" approach by breaking down a large domain gap into smaller gaps and adapting between the smaller gaps step-by-step, dubbed gradual domain adaptation. Specifically, we introduce an intermediate domain (i.e., ego-like) in the source data that shares visual similarity with the target data (i.e., ego). 
+                This encourages us to resolve the large gap gradually from exo-view to ego-like view and finally to ego view. <br><br>
+
+                We facilitate the learning of invariant features with adversarial training, while gradually adapting from exo to ego-like and finally to ego view. The video features are converted to learnable representation by the converter F. These features are fed to the task network G to solve the captioning task and the classifier C to let the converted features be view-independent. The classifier C is trained by adversarial adaptation with a gradient reversal layer. The converter F attempts to produce features undistinguished by the classifier while the classifier is trained to classify their views.
+            </p>
+            <div class="col-xs-12 text-center">
+                <img src="https://gist.github.com/user-attachments/assets/1734a5ea-33d0-4182-866d-193a2440f5dc" width="600">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Results</h3>
+            <p style="font-size: 16px">The figure below shows qualitative results of generated captions and predicted time segments. For time segmentation, while PT+FT and PT + VI-FT generate overlapped segments and overlook some segments, VI-PT + FT and our full method correct these localization errors. In generated captions, we observe several failure patterns: appearing unrelated ingredients and duplicate captions. The captions of PT+FT and PT + VI-FT include the unrelated ingredients (e.g., “tofu”, “pork”, and “udon noodles”). We also find repeated sentences (triangles) in the models without the view-invariant fine-tuning (i.e., PT+FT and VI-PT + FT). These observations suggest that the view-invariant pre-training reduces the mixing of unrelated ingredients, and the later view-invariant fine-tuning helps produce fewer repeated sentences.
+            </p>
+            <div class="col-xs-12 text-center">
+                <img src="https://gist.github.com/user-attachments/assets/15e0ff0b-797c-423b-89f1-aab1aacbcc09" width="700">                
+            </div>
+        </div>
+    </div>
+
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+          <td style="padding:0px">
+            <br>
+            <p style="text-align:right;font-size:small;float:right;">
+              © Takehiko Ohkawa
+            </p>
+            <p style="text-align:left;font-size:small;">
+                <a href="https://tkhkaeio.github.io/">< Home</a>
+            </p>
+          </td>
+        </tr>
+      </tbody></table>
+
+  </div>
+
+</body>
+</html>
