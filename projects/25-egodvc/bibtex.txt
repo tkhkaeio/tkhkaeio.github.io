@@ -2,5 +2,6 @@
   author      = {Takehiko Ohkawa and Takuma Yagi and　Taichi Nishimura and　Ryosuke Furuta and　Atsushi Hashimoto and　Yoshitaka Ushiku and　Yoichi Sato},
   title       = {{Exo2EgoDVC}: Dense Video Captioning of Egocentric Procedural Activities Using Web Instructional Videos},
   booktitle   = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  pages       = {xx--xxx},
   year        = {2025},
 }
