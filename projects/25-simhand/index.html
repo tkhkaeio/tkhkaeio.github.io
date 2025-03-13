@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SiMHand: Mining Similar Hands for 3D Hand Pose Pre-Training</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="SiMHand: Mining Similar Hands for 3D Hand Pose Pre-Training">
+	<meta property="og:url" content="https://tkhkaeio.github.io/projects/25-egodvc/">
+	<!-- jQuery -->
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<br>
+				<h1>SiMHand: Mining Similar Hands for 3D Hand Pose Pre-Training</h1>
+				<br>
+				<h4>
+                    <!-- Nie&nbsp;Lin<sup>1*</sup> &emsp; Takehiko&nbsp;Ohkawa<sup>1*</sup> &emsp; Taichi&nbsp;Nishimura<sup>4</sup> &emsp; Ryosuke&nbsp;Furuta<sup>1</sup> &emsp; Atsushi&nbsp;Hashimoto<sup>2</sup> &emsp; Yoshitaka&nbsp;Ushiku<sup>2</sup> &emsp; Yoichi&nbsp;Sato<sup>1</sup> -->
+                    <h4>Nie&nbsp;Lin<sup>1*</sup> &emsp; Takehiko&nbsp;Ohkawa<sup>1*</sup> &emsp; Mingfang&nbsp;Zhang<sup>1</sup> &emsp; Ming&nbsp;Li<sup>1</sup> &emsp; Yifei&nbsp;Huang<sup>1</sup> &emsp; Minjie&nbsp;Cai<sup>2</sup> &emsp; Ryosuke&nbsp;Furuta<sup>1</sup> &emsp; Yoichi&nbsp;Sato<sup>1</sup></h4>
+                </h4>                
+			</div>
+			<div class="col-xs-12 text-center">
+                <h4><sup>1</sup>The&nbsp;University&nbsp;of&nbsp;Tokyo &emsp; 
+                    <sup>2</sup>Hunan University&emsp; 
+                    <span class="col-xs-12 text-center" style="font-size: 14px;"><sup>*</sup>Equal Contribution</span>
+                </h4>
+            </div>
+            <div class="col-xs-12 text-center">
+                <h4>International Conference on Learning Representations (<b>ICLR</b>), 2025</h4>                 
+			</div>
+            <div class="col-xs-12 text-center">
+                <h4>
+                    <a href="https://arxiv.org/abs/2502.15251" style="font-size: 14pt;">[Paper]</a>
+                    <a href="https://github.com/ut-vision/SiMHand" style="font-size: 14pt;">[Code]</a>
+                    <!-- <a href="https://youtu.be/xxxx" style="font-size: 14pt;">[Video]</a> -->
+                </h4>
+            </div>
+    <br>
+		</div>
+		<br>
+		<br>
+		<br>
+		
+    <div class="row">
+			<div class="col-xs-12">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+                        <!-- <iframe width="800" height="300" src="" frameborder="0"></iframe> -->
+                        <div class="col-xs-12 text-center">
+                            <img src="https://gist.github.com/user-attachments/assets/795fa2e4-cf58-4a4f-bc89-de0f5c15bcb0" width="500"></div>
+					</div>
+                    <div class="col-xs-12 text-center">
+                        
+                    </div>
+				</div>
+			</div>
+		</div>
+		
+    <div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Abstract</h3>
+				<p style="font-size: 16px">We present a framework for pre-training of 3D hand pose estimation from in-the-wild hand images sharing with similar hand characteristics, dubbed <b>SiMHand</b>. Pre-training with large-scale images achieves promising results in various tasks, but prior methods for 3D hand pose pre-training have not fully utilized the potential of diverse hand images accessible from in-the-wild videos. To facilitate scalable pre-training, we first prepare an extensive pool of hand images from in-the-wild videos and design our pre-training method with contrastive learning. Specifically, we collect over 2.0M hand images from recent human-centric videos, such as 100DOH and Ego4D. To extract discriminative information from these images, we focus on the similarity of hands: pairs of non-identical samples with similar hand poses. We then propose a novel contrastive learning method that embeds similar hand pairs closer in the feature space. Our method not only learns from similar samples but also adaptively weights the contrastive learning loss based on inter-sample distance, leading to additional performance gains. Our experiments demonstrate that our method outperforms conventional contrastive learning approaches that produce positive pairs sorely from a single image with data augmentation. We achieve significant improvements over the state-of-the-art method (PeCLR) in various datasets, with gains of 15% on FreiHand, 10% on DexYCB, and 4% on AssemblyHands.
+				</p>
+			</div>
+		</div>
+    
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Similar Hands Mining for Positive Pairing</h3>
+            <p style="font-size: 16px">
+            To incorporate diverse samples in contrastive learning, we design positive pairs from non-identical images with similar foreground hands. 
+            We construct a mining algorithm to find similar hands from large human-centric videos (Ego4D and 100DoH) by focusing on pose similarity between hand images. 
+            For illustration, we denote “Top-1” (most similar) as our assigned positive sample to the query image. As references, the rest of the figures (“Top-K”) represent the K-th similar samples. 
+            Our sampling highlights the diversity in captured environments and interactions, while it also suggests that as the rank (distance) increases, the sampled images become dissimilar.
+            </p>            
+            <div class="col-xs-12 text-center">
+                <img src="https://gist.github.com/user-attachments/assets/332e4b5a-10cf-42c3-8f15-e95448464c8c" width="800">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Contrastive Learning from Similar Hands with Adaptive Weighting</h3>
+            <p style="font-size: 16px">
+                We propose a novel contrastive learning method that embeds similar hand pairs closer in the feature space. 
+                A naive adaptation of the similar hands is to replace the original positive pairs in contrastive learning with the mined similar hands, but this scheme struggles to exploit how similar the paired hands are. To tackle this, we assign weights based on the similarity scores within the mini-batch in the contrastive learning loss. The weights are designed to have higher values as the similarity of the pairs increases. 
+                This allows the optimization of contrastive learning to explicitly consider the proximity of samples, beyond binary discrimination between positives and negatives.<br><br>
+
+                In the figure below, hand images (I, I+, I−) and their corresponding 2D keypoints are input to the model. After applying random augmentations through transformation, both the images and 2D keypoints are spatially transformed. The altered 2D keypoints are then used to compute adaptive weights, which guide contrastive learning by strengthening or weakening the alignment between positive and negative samples.
+            </p>
+            <div class="col-xs-12 text-center">
+                <img src="https://gist.github.com/user-attachments/assets/63da1cb4-3dcf-4349-bbe9-ceb5d14aaf1d" width="800">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Results</h3>
+            <p style="font-size: 16px">
+                We validate the effectiveness of the pre-trained networks by fine-tuning on several datasets for 3D hand pose estimation, namely FreiHand, DexYCB, and AssemblyHands. 
+                Our proposed method consistently outperforms conventional contrastive learning methods, SimCLR and PeCLR. 
+                The figure below demonstrates the performance gain of our method over the comparative pre-training methods on the three fine-tuning datasets.
+            </p>
+            <div class="col-xs-12 text-center">
+                <img src="https://gist.github.com/user-attachments/assets/f05921b1-479e-46ef-9945-5297f5d1a349" width="1200">
+            </div>
+        </div>
+    </div>
+
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+          <td style="padding:0px">
+            <br>
+            <p style="text-align:right;font-size:small;float:right;">
+              © Takehiko Ohkawa
+            </p>
+            <p style="text-align:left;font-size:small;">
+                <a href="https://tkhkaeio.github.io/">< Home</a>
+            </p>
+          </td>
+        </tr>
+      </tbody></table>
+
+  </div>
+
+</body>
+</html>
