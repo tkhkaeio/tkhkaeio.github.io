@@ -54,12 +54,11 @@
 				<div class="row">
 					<div class="col-xs-12 text-center">
                         <!-- <iframe width="800" height="300" src="" frameborder="0"></iframe> -->
-                        <div class="col-xs-12 text-center">
-                            <img src="https://gist.github.com/user-attachments/assets/795fa2e4-cf58-4a4f-bc89-de0f5c15bcb0" width="500"></div>
+                        <!-- <img src="https://gist.github.com/user-attachments/assets/795fa2e4-cf58-4a4f-bc89-de0f5c15bcb0" width="500"></div> -->
+                        <video class="centered" width="100%" autoplay muted loop playsinline>
+                            <source src="./assets/simhand_teaser.mp4" type="video/mp4">
+                        </video>                        
 					</div>
-                    <div class="col-xs-12 text-center">
-                        
-                    </div>
 				</div>
 			</div>
 		</div>
@@ -67,7 +66,7 @@
     <div class="row">
 			<div class="col-xs-12 text-left">
 				<h3>Abstract</h3>
-				<p style="font-size: 16px">We present a framework for pre-training of 3D hand pose estimation from in-the-wild hand images sharing with similar hand characteristics, dubbed <b>SiMHand</b>. Pre-training with large-scale images achieves promising results in various tasks, but prior methods for 3D hand pose pre-training have not fully utilized the potential of diverse hand images accessible from in-the-wild videos. To facilitate scalable pre-training, we first prepare an extensive pool of hand images from in-the-wild videos and design our pre-training method with contrastive learning. Specifically, we collect over 2.0M hand images from recent human-centric videos, such as 100DOH and Ego4D. To extract discriminative information from these images, we focus on the similarity of hands: pairs of non-identical samples with similar hand poses. We then propose a novel contrastive learning method that embeds similar hand pairs closer in the feature space. Our method not only learns from similar samples but also adaptively weights the contrastive learning loss based on inter-sample distance, leading to additional performance gains. Our experiments demonstrate that our method outperforms conventional contrastive learning approaches that produce positive pairs sorely from a single image with data augmentation. We achieve significant improvements over the state-of-the-art method (PeCLR) in various datasets, with gains of 15% on FreiHand, 10% on DexYCB, and 4% on AssemblyHands.
+				<p style="font-size: 16px">We present a framework for pre-training of 3D hand pose estimation from in-the-wild hand images sharing with similar hand characteristics, dubbed <b>SiMHand</b>. Pre-training with large-scale images achieves promising results in various tasks, but prior methods for 3D hand pose pre-training have not fully utilized the potential of diverse hand images accessible from in-the-wild videos. To facilitate scalable pre-training, we first prepare an extensive pool of hand images from in-the-wild videos and design our pre-training method with contrastive learning. Specifically, we collect over 2.0M hand images from recent human-centric videos, such as 100DOH and Ego4D. To extract discriminative information from these images, we focus on the similarity of hands: pairs of non-identical samples with similar hand poses. We then propose a novel contrastive learning method that embeds similar hand pairs closer in the feature space. Our method not only learns from similar samples but also adaptively weights the contrastive learning loss based on inter-sample distance, leading to additional performance gains. Our experiments demonstrate that our method outperforms conventional contrastive learning approaches that produce positive pairs solely from a single image with data augmentation. We achieve significant improvements over the state-of-the-art method (PeCLR) in various datasets, with gains of 15% on FreiHand, 10% on DexYCB, and 4% on AssemblyHands.
 				</p>
 			</div>
 		</div>
