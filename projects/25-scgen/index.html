@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Generative Modeling of Shape-Dependent Self-Contact Human Poses</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="Generative Modeling of Shape-Dependent Self-Contact Human Poses">
+	<meta property="og:url" content="https://tkhkaeio.github.io/projects/25-selfcontact/">
+	<!-- jQuery -->
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<br>
+				<h1>Generative Modeling of Shape-Dependent Self-Contact Human Poses</h1>
+				<br>
+				<h4>Takehiko&nbsp;Ohkawa<sup>1,2*</sup> &emsp; Jihyun&nbsp;Lee<sup>1,3*</sup> &emsp; Shunsuke&nbsp;Saito<sup>1</sup> &emsp; Jason&nbsp;Saragih<sup>1</sup> &emsp; Fabian&nbsp;Prada<sup>1</sup> &emsp; Yichen&nbsp;Xu<sup>1</sup> &emsp; Shoou-I&nbsp;Yu<sup>1</sup> &emsp; Ryosuke&nbsp;Furuta<sup>2</sup> &emsp; Yoichi&nbsp;Sato<sup>2</sup> &emsp; Takaaki&nbsp;Shiratori<sup>1</sup></h4>
+			</div>
+			<div class="col-xs-12 text-center">
+                <h4><sup>1</sup>Codec&nbsp;Avatars&nbsp;Lab,&nbsp;Meta&emsp;
+                    <sup>2</sup>The&nbsp;University&nbsp;of&nbsp;Tokyo &emsp; 
+                    <sup>3</sup>KAIST&emsp;<br>                    
+                </h4>
+                <span class="col-xs-12 text-center" style="font-size: 14px;"><sup>*</sup>Work done during the internship at Meta</span>
+			</div>
+            <div class="col-xs-12 text-center">
+                <h4>IEEE/CVF International Conference on Computer Vision (<b>ICCV</b>), 2025</h4>
+			</div>
+            <div class="col-xs-12 text-center">
+                <h4>
+                    <a href="https://arxiv.org/abs/tbd" style="font-size: 14pt;">[Paper]</a>
+                    <a href="https://github.com/tbd" style="font-size: 14pt;">[Data & Code]</a>
+                </h4>
+            </div>
+
+    <br>
+
+		</div>
+		<br>
+		<br>
+		<br>
+		
+    <div class="row">
+			<div class="col-xs-12">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+                        <!-- <iframe width="800" height="300" src="" frameborder="0"></iframe> -->
+                        <div class="col-xs-12 text-center">
+                            <img src="https://gist.github.com/user-attachments/assets/04a3da17-29a0-421e-bbdc-a15a462b49d3" width="1000" ></div>
+					</div>
+                    <div class="col-xs-12 text-center">
+                        
+                    </div>
+				</div>
+			</div>
+		</div>
+		
+    <div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Abstract</h3>
+				<p style="font-size: 16px">    
+                    One can hardly model self-contact of human poses without considering underlying body shapes. For example, the pose of rubbing a belly for a person with a low BMI leads to penetration of the hand into the belly for a person with a high BMI. Despite its relevance, existing self-contact datasets lack the variety of self-contact poses and precise body shapes, limiting conclusive analysis between self-contact poses and shapes. To address this, we begin by introducing the first extensive self-contact dataset with precise body shape registration, Goliath-SC, consisting of 383K self-contact poses across 130 subjects. Using this dataset, we propose generative modeling of self-contact prior conditioned by body shape parameters, based on a body-part-wise latent diffusion with self-attention. We further incorporate this prior into single-view human pose estimation while refining estimated poses to be in contact. Our experiments suggest that shape conditioning is vital to the successful modeling of self-contact pose distribution, hence improving single-view pose estimation in self-contact.
+				</p>
+			</div>
+		</div>
+    
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Goliath-SC Dataset</h3>
+            <p style="font-size: 16px">
+                We offer the first extensive self-contact dataset with varying full-body poses and precise body shape registration, dubbed Goliath-SC. Our self-contact dataset contains the largest amount of self-contact poses, 383K poses from 130 subjects. It further provides accurate full-body mesh registration based on 3D scans in a multi-camera dome (Goliath), which are converted to SMPL-X to access shape parameters. The scope of captured activities lies in natural self-contacts occurring in daily life like touching face, body, hands, etc. It also serves to identify limitations of recent pose estimators including foundation models on the self-contact data.
+            </p>
+            <div class="col-xs-12 text-center">
+                <iframe width="600" height="400" src="https://www.youtube.com/embed/ssQtv9nJOQ8?autoplay=1&mute=1&showinfo=0&modestbranding=1&controls=0&disablekb=1&
+                playsinline=1&loop=1&playlist=ssQtv9nJOQ8" frameborder="0" style="margin-bottom: 20px;margin-top: 20px;"></iframe>
+            </div>            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Shape-Dependent Self-Contact Pose Modeling with Diffusion Models</h3>
+            <p style="font-size: 16px">
+                We investigate generative prior modeling of full-body poses in self-contact without relying on images. Our approach involves a new insight of body-shape-dependency regarding the subject's physical identity, such as (i) skeleton differences in height, limb length, etc., and (ii) surface differences caused by body fat and muscle distribution like BMI.  Unlike joint distribution modeling between pose and shape with 3D human models such as SMPL and MANO, we aim to model the shape-dependent manifold of self-contact poses. Our proposed model follows a shape-conditional generative model with diffusion process. Specifically, we develop a latent diffusion model with self-attention, termed <b>PAPoseDiff</b>, which considers the relationship among highly interacting body parts (e.g., hands, body, and face). 
+                We leverage the learned diffusion prior to refine 3D poses in self-contact. Given initial SMPL-X estimation, we refine the poses to have a smaller error to the 2D keypoint observation, while maintaining the plausibility in contact acquired by the former generative training. 
+                
+            </p>
+            <div class="col-xs-12 text-center">
+                <img src="https://gist.github.com/user-attachments/assets/5da21205-3df4-4f7e-9c20-c358e8988d6b" width="1000" style="margin-bottom: 20px;margin-top: 20px;">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Results: Shape-Conditional Pose Generation</h3>
+            <p style="font-size: 16px">
+                The video below shows our qualitative results with shape interpolation. 
+                When changing the body shapes (from a large to a slim body), the generated poses continuously move on the hand surface while preserving plausible self-contact poses.
+                This indicates that our diffusion model can learn a smooth manifold of self-contact poses with respect to body shape changes.
+            </p>
+            <div class="col-xs-12 text-center">
+                <iframe width="600" height="400" src="https://www.youtube.com/embed/-MyO6EaBTNk?autoplay=1&mute=1&showinfo=0&modestbranding=1&controls=0&disablekb=1&
+                playsinline=1&loop=1&playlist=-MyO6EaBTNk" frameborder="0" style="margin-bottom: 20px;margin-top: 20px;"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Results: Single-View Pose Refinement</h3>
+            <p style="font-size: 16px">
+                The figure below shows qualitative results of our refinement. We find that the initial predictions include ambiguities regarding contact and depth estimation, i.e., interacting parts are not in contact, and high-depth errors remain for hands. Our method can correct such failures without requiring the knowledge of where to contact. We also test our method in the wild. We observe the pseudo-GTs generated by 2D fitting may not be able to handle such self-contact scenes well; thus our method can be leveraged for the pseudo-GTs registration for self-contacts of in-the-wild domains. 
+            </p>
+            <div class="col-xs-12 text-center">
+                <img src="https://gist.github.com/user-attachments/assets/0d3d1eb9-c402-4473-a963-3771ec1a7be4" width="1000">
+            </div>
+        </div>
+    </div>
+
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+          <td style="padding:0px">
+            <br>
+            <p style="text-align:right;font-size:small;float:right;">
+              © Takehiko Ohkawa
+            </p>
+            <p style="text-align:left;font-size:small;">
+                <a href="https://tkhkaeio.github.io/">< Home</a>
+            </p>
+          </td>
+        </tr>
+      </tbody></table>
+
+  </div>
+
+</body>
+</html>
