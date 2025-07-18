@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Visual Understanding of Human Hands in Interactions</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="Visual Understanding of Human Hands in Interactions">
+	<meta property="og:url" content="https://tkhkaeio.github.io/projects/25-selfcontact/">
+	<!- jQuery ->
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"></script>
+	<!- Bootstrap ->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<br>
+				<h1>Visual Understanding of Human Hands in Interactions</h1>
+				<br>
+				<h4>Takehiko&nbsp;Ohkawa</h4>
+			</div>
+			<div class="col-xs-12 text-center">
+                <h4>The&nbsp;University&nbsp;of&nbsp;Tokyo
+                </h4>
+			</div>
+            <div class="col-xs-12 text-center">
+                <h4>Doctoral&nbsp;Dissertation, 2025</h4>
+			</div>
+            <div class="col-xs-12 text-center">
+                <h4>
+                    <a href="./pdf/thesis_full.pdf" style="font-size: 14pt;">[Paper (full version)]</a>
+                    <a href="https://speakerdeck.com/tkhkaeio/phd-defense-2025-visual-understanding-of-human-hands-in-interactions" style="font-size: 14pt;">[Slides]</a>
+                </h4>
+            </div>    
+		</div>
+		<br>
+		<br>
+		<br>
+		
+    <div class="row">
+			<div class="col-xs-12">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+                        <div class="col-xs-12 text-center">
+                            <img src="./figs/thesis_overview.png" width="1000" ></div>
+					</div>
+                    <div class="col-xs-12 text-center">
+                        
+                    </div>
+				</div>
+			</div>
+		</div>
+		
+    <div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Abstract</h3>				
+                <p style="font-size: 16px">Human hand interactions are central to daily activities and communication, providing informative signals for human action, expression, and intent. 
+                Visual perception and modeling of hands from images and videos are therefore crucial for various applications, including understanding human interactions in the wild, virtual human modeling in 3D, human augmentation through assistive vision systems, and highly dexterous robotic manipulation.</p>
+                
+                <p style="font-size: 16px">While computer vision has evolved to estimate hand states ranging from coarse detection to nuanced 3D pose and shape, existing methods fall short in complicated and fine-grained contact scenarios, such as grasping objects (<i>i.e.</i>, hand-object contact) or touching our body (<i>i.e.</i>, self-contact). 
+                Moreover, beyond precise tracking, it is essential to model the relationship between hand states and their semantic context (e.g., action labels or language) to represent the dynamics, activities, and procedures of human behavior. 
+                However, linking low-level hand states to high-level semantic comprehension remains underexplored.</p>
+                
+                <p style="font-size: 16px">This dissertation addresses these limitations by pursuing the goal of <strong style="color: #C70039; font-size: 16px">precise tracking and interpretation of fine-grained hand interactions from real-world visual data</strong>.
+                To achieve this, the dissertation systematically proposes three key pillars:                
+                <ul style="font-size: 16px">
+                    <li><strong style="color: #C70039; font-size: 16px">Data foundation:</strong> Building diverse and high-quality data infrastructure to enable learning fine-grained hand interactions featuring challenging contact scenarios.</li>
+                    <li><strong style="color: #C70039; font-size: 16px">Robust modeling for fine details:</strong> Achieving robust and reliable estimation for fine-grained hand interactions by generalizing and adapting machine learning models, making them resilient to occlusion and noise under in-the-wild scenarios.</li>
+                    <li><strong style="color: #C70039; font-size: 16px">Connecting geometry and semantics:</strong> Bridging captured geometric information with semantics to comprehend actions and intentions based on tracked hand states.</li>
+                </ul>
+                </p><br>
+
+                <p style="font-size: 16px">The <em style="color: #C70039; font-size: 16px">first pillar</em> of this research focuses on building a diverse and high-quality data foundation. This involves investigating and capturing hand interaction datasets that include complex contacts, such as object interaction and self-contact, using multi-camera systems. This approach enables high-precision 3D pose and shape annotations for intricate hand contact, while offering valuable assets to the community.</p>
+
+                <p style="font-size: 16px">The <em style="color: #C70039; font-size: 16px">second pillar</em> is dedicated to robust modeling to capture fine details. Leveraging the constructed datasets, we develop advanced machine learning methods for generalizable and adaptable estimation in the wild. This includes comprehensive analysis of 3D hand pose estimation tasks during object contact, building model priors from diverse image or pose data for downstream tasks in pose estimation, and proposing adaptation methods to further bridge performance gaps across different recording environments and camera settings.</p>
+
+                <p style="font-size: 16px">The <em style="color: #C70039; font-size: 16px">third pillar</em> centers on connecting the captured low-level geometric information with high-level semantic understanding.
+                This involves utilizing the predictions for hand geometry in 2D or 3D (e.g., detection, segmentation, and pose) to comprehend the semantics of the interaction.
+                We explore natural language descriptions as semantic signals and propose generating dense video captions from the hand-object tracklets.</p>
+                
+                <p style="font-size: 16px">Collectively, these three pillars present a consistent and integrated framework to advance the visual understanding of hands in interactions. By combining advanced techniques in data foundation, robust modeling, and semantic understanding, this dissertation contributes to foundational technologies and intelligent systems for human-centric interactions, with broader applications and implications in computer vision.</p>                        
+				
+			</div>
+		</div>
+    
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Publications</h3>
+            <p style="font-size: 14px">Note that * indicates co-first authors.</p>
+            <ol style="font-size: 14px;">
+                <li><u>T. Ohkawa</u>, R. Furuta, and Y. Sato.
+                <a href="https://link.springer.com/article/10.1007/s11263-023-01856-0" style="font-size: 14px;">Efficient annotation and learning for 3D hand pose estimation: A survey</a>.
+                <i>International Journal on Computer Vision (<b>IJCV</b>)</i>, 131:3193-3206, 2023.</li>
+
+                <li>Z. Fan*, <u>T. Ohkawa*</u>, L. Yang*, (20 authors), and A. Yao.
+                <a href="https://link.springer.com/chapter/10.1007/978-3-031-72698-9_25" style="font-size: 14px;">Benchmarks and challenges in pose estimation for egocentric hand interactions with objects</a>.
+                In <i>Proceedings of the European Conference on Computer Vision (<b>ECCV</b>)</i>, pages 428-448, 2024.</li>
+
+                <li><u>T. Ohkawa</u>, J. Lee, S. Saito, J. Saragih, F. Prada, Y. Xu, S. Yu, R. Furuta, Y. Sato, and T. Shiratori.
+                <a href="https://tkhkaeio.github.io/projects/25-scgen/index.html" style="font-size: 14px;">Generative modeling of shape-dependent self-contact human poses</a>.
+                To appear in <i>IEEE/CVF International Conference on Computer Vision (<b>ICCV</b>)</i>, 2025.</li>
+
+                <li>N. Lin*, <u>T. Ohkawa*</u>, M. Zhang, Y. Huang, M Cai, M. Li, R. Furuta, and Y. Sato.
+                <a href="https://tkhkaeio.github.io/projects/25-simhand/index.html" style="font-size: 14px;">SiMHand: Mining similar hands for large-scale 3D hand pose pre-training</a>.
+                In <i>Proceedings of the International Conference on Learning Representations (<b>ICLR</b>)</i>, 2025.</li>
+
+                <li><u>T. Ohkawa</u>, Y.-J. Li, Q. Fu, R. Furuta, K. M. Kitani, and Y. Sato.
+                <a href="https://tkhkaeio.github.io/projects/22-hand-ps-da/index.html" style="font-size: 14px;">Domain adaptive hand keypoint and pixel localization in the wild</a>.
+                In <i>Proceedings of the European Conference on Computer Vision (<b>ECCV</b>)</i>, pages 68-87, 2022.</li>
+
+                <li><u>T. Ohkawa</u>, T. Yagi, T. Nishimura, R. Furuta, A. Hashimoto, Y. Ushiku, and Y. Sato.
+                <a href="https://tkhkaeio.github.io/projects/25-egodvc/index.html" style="font-size: 14px;">Exo2EgoDVC: Dense video captioning of egocentric procedural activities using web instructional videos</a>.
+                In <i>Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (<b>WACV</b>)</i>, 2025.</li>
+            </ol>
+
+        <h4>Related Publications</h4>
+        <ol style="font-size: 14px;" start="7">
+            <li><u>T. Ohkawa</u>, K. He, F. Sener, T. Hodan, L. Tran, and C. Keskin.
+            <a href="https://assemblyhands.github.io/" style="font-size: 14px;">AssemblyHands: Towards egocentric activity understanding via 3D hand pose estimation</a>.
+            In <i>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>)</i>, pages 12999-13008, 2023. 
+            <strong style="color: #C70039; font-size: 14px;">EgoVis Distinguished Paper Award at CVPR 2025</strong>.</li>
+
+            <li>R. Liu, <u>T. Ohkawa</u>, M. Zhang, and Y. Sato.
+            <a href="https://arxiv.org/abs/2403.04381" style="font-size: 14px;">Single-to-dual-view adaptation for egocentric 3D hand pose estimation</a>.
+            In <i>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>)</i>, pages 677-686, 2024.</li>
+
+            <li><u>T. Ohkawa</u>, T. Yagi, A. Hashimoto, Y. Ushiku, and Y. Sato.
+            <a href="https://ieeexplore.ieee.org/document/9469781" style="font-size: 14px;">Foreground-aware stylization and consensus pseudo-labeling for domain adaptation of first-person hand segmentation</a>.
+            <i><b>IEEE Access</b></i>, 9:94644-94655, 2021.</li>
+        </ol>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Slides</h3>
+            <iframe width="800" height="450" src="https://speakerdeck.com/player/bad0d32589b44bf49e8772e12f27dbce" frameborder="0" allowfullscreen="" scrolling="no" allow="encrypted-media;"></iframe>
+        </div>
+    </div>    
+
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Citation</h3>
+            <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; text-align: left;">
+<code>@phdthesis{ohkawa:phd2025,
+    title  = {Visual Understanding of Human Hands in Interactions},
+    author = {Takehiko Ohkawa},
+    school = {The University of Tokyo},
+    year   = {2025}
+}</code></pre>
+        </div>
+    </div>
+
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+          <td style="padding:0px">
+            <br>
+            <p style="text-align:right;font-size:small;float:right;">
+              © Takehiko Ohkawa
+            </p>
+            <p style="text-align:left;font-size:small;">
+                <a href="https://tkhkaeio.github.io/">< Home</a>
+            </p>
+          </td>
+        </tr>
+      </tbody></table>
+
+  </div>
+
+</body>
+</html>
