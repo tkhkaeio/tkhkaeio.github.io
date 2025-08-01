@@ -37,7 +37,11 @@
                     <a href="https://speakerdeck.com/tkhkaeio/phd-defense-2025-visual-understanding-of-human-hands-in-interactions" style="font-size: 14pt;">[Slides]</a>
                 </h4>
             </div>    
-		</div>
+            <div class="col-xs-12 text-center">
+                <h5><i>In every sense, it’s a story of hands — hands that were studied with care, hands that worked with devotion, and hands that reached out with kindness.</i>
+                </h5>
+            </div>
+		</div>        
 		<br>
 		<br>
 		<br>
@@ -59,18 +63,18 @@
     <div class="row">
 			<div class="col-xs-12 text-left">
 				<h3>Abstract</h3>				
-                <p style="font-size: 16px">Human hand interactions are central to daily activities and communication, providing informative signals for human action, expression, and intent. 
-                Visual perception and modeling of hands from images and videos are therefore crucial for various applications, including understanding human interactions in the wild, virtual human modeling in 3D, human augmentation through assistive vision systems, and highly dexterous robotic manipulation.</p>
+                <p style="font-size: 16px">
+                Human hand interactions are central to daily activities and communication, providing informative signals for human action, expression, and intent. Visual perception and modeling of hands from images and videos are therefore crucial for various applications, including understanding human interactions in the wild, virtual human modeling in 3D, human augmentation through assistive vision systems, and highly dexterous robotic manipulation.                    
+                </p>
                 
-                <p style="font-size: 16px">While computer vision has evolved to estimate hand states ranging from coarse detection to nuanced 3D pose and shape, existing methods fall short in complicated and fine-grained contact scenarios, such as grasping objects (<i>i.e.</i>, hand-object contact) or touching our body (<i>i.e.</i>, self-contact). 
-                Moreover, beyond precise tracking, it is essential to model the relationship between hand states and their semantic context (e.g., action labels or language) to represent the dynamics, activities, and procedures of human behavior. 
-                However, linking low-level hand states to high-level semantic comprehension remains underexplored.</p>
+                <p style="font-size: 16px">
+                While computer vision has evolved to estimate hand states ranging from coarse detection to nuanced 3D pose and shape estimation, existing methods fall short in three key challenges. First, they struggle to handle complicated and fine-grained contact scenarios, such as grasping objects (<i>i.e.</i>, hand-object contact) or touching one's own body (<i>i.e.</i>, self-contact), where occlusions and deformations introduce substantial ambiguity. Second, most models generalize poorly to dynamic and real-world environments due to the domain gap between studio-collected training datasets and in-the-wild testing conditions. Third, beyond geometric estimation, current approaches often lack the ability to link low-level hand states to high-level semantic comprehension, <i>e.g.</i>, with action labels or language.</p>
                 
                 <p style="font-size: 16px">This dissertation addresses these limitations by pursuing the goal of <strong style="color: #C70039; font-size: 16px">precise tracking and interpretation of fine-grained hand interactions from real-world visual data</strong>.
                 To achieve this, the dissertation systematically proposes three key pillars:                
                 <ul style="font-size: 16px">
                     <li><strong style="color: #C70039; font-size: 16px">Data foundation:</strong> Building diverse and high-quality data infrastructure to enable learning fine-grained hand interactions featuring challenging contact scenarios.</li>
-                    <li><strong style="color: #C70039; font-size: 16px">Robust modeling for fine details:</strong> Achieving robust and reliable estimation for fine-grained hand interactions by generalizing and adapting machine learning models, making them resilient to occlusion and noise under in-the-wild scenarios.</li>
+                    <li><strong style="color: #C70039; font-size: 16px">Robust modeling for fine details:</strong> Achieving robust and reliable estimation for fine-grained hand interactions by generalizing and adapting machine learning models, making them resilient to occlusion, noise, and domain shift in in-the-wild scenarios.</li>
                     <li><strong style="color: #C70039; font-size: 16px">Connecting geometry and semantics:</strong> Bridging captured geometric information with semantics to comprehend actions and intentions based on tracked hand states.</li>
                 </ul>
                 </p><br>
