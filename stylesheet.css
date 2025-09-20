@@ -106,6 +106,15 @@ a:hover {
   text-decoration: none;
 }
 
+
+:root {
+  --clr-accent: #C70039;
+  /* --clr-accent: #8c1b13; */
+  --fs-16: 16px;
+}
+.text-accent { color: var(--clr-accent); }
+.fs-16      { font-size: var(--fs-16); }
+
 body,
 td,
 th,
