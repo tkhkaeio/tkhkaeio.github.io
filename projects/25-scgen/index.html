@@ -34,12 +34,12 @@
             <div class="col-xs-12 text-center">
                 <h4>IEEE/CVF International Conference on Computer Vision (<b>ICCV</b>), 2025</h4>
 			</div>
-            <!-- <div class="col-xs-12 text-center">
+            <div class="col-xs-12 text-center">
                 <h4>
-                    <a href="https://arxiv.org/abs/tbd" style="font-size: 14pt;">[Paper]</a>
-                    <a href="https://github.com/tbd" style="font-size: 14pt;">[Data & Code]</a>
+                    <a href="https://arxiv.org/abs/2509.23393">[Paper]</a>
+                    <!-- <a href="https://github.com/facebookresearch/SCGen">[Data & Code]</a> -->
                 </h4>
-            </div> -->
+            </div>
 
     <br>
 
@@ -72,15 +72,14 @@
 			</div>
 		</div>
     
-    <!-- <div class="row">
+    <div class="row">
         <div class="col-xs-12 text-left">
             <h3>Goliath-SC Dataset</h3>
             <p style="font-size: 16px">
                 We offer the first extensive self-contact dataset with varying full-body poses and precise body shape registration, dubbed Goliath-SC. Our self-contact dataset contains the largest amount of self-contact poses, 383K poses from 130 subjects. It further provides accurate full-body mesh registration based on 3D scans in a multi-camera dome (Goliath), which are converted to SMPL-X to access shape parameters. The scope of captured activities lies in natural self-contacts occurring in daily life like touching face, body, hands, etc. It also serves to identify limitations of recent pose estimators including foundation models on the self-contact data.
             </p>
             <div class="col-xs-12 text-center">
-                <iframe width="600" height="400" src="https://www.youtube.com/embed/ssQtv9nJOQ8?autoplay=1&mute=1&showinfo=0&modestbranding=1&controls=0&disablekb=1&
-                playsinline=1&loop=1&playlist=ssQtv9nJOQ8" frameborder="0" style="margin-bottom: 20px;margin-top: 20px;"></iframe>
+                <iframe width="600" height="400" src="https://www.youtube.com/embed/ssQtv9nJOQ8?autoplay=1&mute=1&showinfo=0&modestbranding=1&controls=0&disablekb=1& playsinline=1&loop=1&playlist=ssQtv9nJOQ8" frameborder="0" style="margin-bottom: 20px;margin-top: 20px;"></iframe>
             </div>            
         </div>
     </div>
@@ -89,8 +88,7 @@
             <h3>Shape-Dependent Self-Contact Pose Modeling with Diffusion Models</h3>
             <p style="font-size: 16px">
                 We investigate generative prior modeling of full-body poses in self-contact without relying on images. Our approach involves a new insight of body-shape-dependency regarding the subject's physical identity, such as (i) skeleton differences in height, limb length, etc., and (ii) surface differences caused by body fat and muscle distribution like BMI.  Unlike joint distribution modeling between pose and shape with 3D human models such as SMPL and MANO, we aim to model the shape-dependent manifold of self-contact poses. Our proposed model follows a shape-conditional generative model with diffusion process. Specifically, we develop a latent diffusion model with self-attention, termed <b>PAPoseDiff</b>, which considers the relationship among highly interacting body parts (e.g., hands, body, and face). 
-                We leverage the learned diffusion prior to refine 3D poses in self-contact. Given initial SMPL-X estimation, we refine the poses to have a smaller error to the 2D keypoint observation, while maintaining the plausibility in contact acquired by the former generative training. 
-                
+                We leverage the learned diffusion prior to refine 3D poses in self-contact. Given initial SMPL-X estimation, we refine the poses to have a smaller error to the 2D keypoint observation, while maintaining the plausibility in contact acquired by the former generative training.                 
             </p>
             <div class="col-xs-12 text-center">
                 <img src="https://gist.github.com/user-attachments/assets/5da21205-3df4-4f7e-9c20-c358e8988d6b" width="1000" style="margin-bottom: 20px;margin-top: 20px;">
@@ -121,7 +119,7 @@
                 <img src="https://gist.github.com/user-attachments/assets/0d3d1eb9-c402-4473-a963-3771ec1a7be4" width="1000">
             </div>
         </div>
-    </div> -->
+    </div>
 
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
