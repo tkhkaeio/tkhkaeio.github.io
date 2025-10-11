@@ -1,0 +1,6 @@
+@phdthesis{ohkawa:phd2025,
+    title  = {Visual Understanding of Human Hands in Interactions},
+    author = {Takehiko Ohkawa},
+    school = {The University of Tokyo},
+    year   = {2025}
+}
