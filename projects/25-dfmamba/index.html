@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DF-Mamba: Deformable State Space Modeling for 3D Hand Pose Estimation in Interactions</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="DF-Mamba: Deformable State Space Modeling for 3D Hand Pose Estimation in Interactions">
+	<meta property="og:url" content="https://tkhkaeio.github.io/projects/25-dfmamba/">
+	<!-- jQuery -->
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<br>
+				<h1>DF-Mamba: Deformable State Space Modeling for 3D Hand Pose Estimation in Interactions</h1>
+				<br>
+				<h4>
+                    <h4>Yifan&nbsp;Zhou<sup>1*</sup>&emsp; Takehiko&nbsp;Ohkawa<sup>1,2*</sup>&emsp; Guwenxiao&nbsp;Zhou<sup>1</sup>&emsp; Kanoko&nbsp;Goto<sup>1</sup>&emsp; Takumi&nbsp;Hirose<sup>1</sup>&emsp; Yusuke&nbsp;Sekikawa<sup>3</sup>&emsp; Nakamasa&nbsp;Inoue<sup>1</sup></h4>
+                </h4>                
+			</div>
+			<div class="col-xs-12 text-center">
+                <h4>
+                    <sup>1</sup>Institute of Science Tokyo&emsp; 
+                    <sup>2</sup>The&nbsp;University&nbsp;of&nbsp;Tokyo &emsp;
+                    <sup>3</sup>Denso IT Laboratory&emsp; 
+                    
+                    <span class="col-xs-12 text-center" style="font-size: 14px;"><sup>*</sup>Equal Contribution</span>
+                </h4>
+            </div>
+            <div class="col-xs-12 text-center">
+                <h4>IEEE/CVF Winter Conference on Applications of Computer Vision (<b>WACV</b>), 2026</h4>
+			</div>
+            <div class="col-xs-12 text-center">
+                <h4>
+                    <a href="https://arxiv.org/abs/tbd" style="font-size: 14pt;">[Paper (TBD)]</a>
+                    <!-- <a href="https://github.com/tbd" style="font-size: 14pt;">[Code]</a> -->
+                    <!-- <a href="https://drive.google.com/file/d/1juP-FlV9o5pTYVi7mviTU4DMcKiAiovB/view?usp=sharing" style="font-size: 14pt;">[Poster]</a> -->
+                    <!-- <a href="https://youtu.be/xxxx" style="font-size: 14pt;">[Video]</a> -->
+                </h4>
+            </div>
+    <br>
+		</div>
+		<br>
+		<br>
+		<br>
+		
+    <div class="row">
+			<div class="col-xs-12">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+                        <img src="./figs/dfmamba_teaser_h.png" width="1000">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+    <div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Abstract</h3>
+				<p style="font-size: 16px">
+                Modeling daily hand interactions often struggles with severe occlusions, such as when two hands overlap, which highlights the need for robust feature learning in 3D hand pose estimation (HPE). To handle such occluded hand images, it is vital to effectively learn the relationship between local image features (e.g., for occluded joints) and global context (e.g., cues from inter-joints, inter-hands, or the scene). However, most current 3D HPE methods still rely on ResNet for feature extraction, and such CNN's inductive bias may not be optimal for 3D HPE due to its limited capability to model the global context. To address this limitation, we propose an effective and efficient framework for visual feature extraction in 3D HPE using recent state space modeling (i.e., Mamba), dubbed <b>Deformable Mamba (DF-Mamba)</b>. DF-Mamba is designed to capture global context cues beyond standard convolution through Mamba's selective state modeling and the proposed deformable state scanning. Specifically, for local features after convolution, our deformable scanning aggregates these features within an image while selectively preserving useful cues that represent the global context. This approach significantly improves the accuracy of structured 3D HPE, with comparable inference speed to ResNet-50. Our experiments involve extensive evaluations on five divergent datasets including single-hand and two-hand scenarios, hand-only and hand-object interactions, as well as RGB and depth-based estimation. DF-Mamba outperforms the latest image backbones, including VMamba and Spatial-Mamba, on all datasets and achieves state-of-the-art performance.
+				</p>
+			</div>
+		</div>
+    
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>DF-Mamba Architecture</h3>
+            <p style="font-size: 16px">
+            We design a tribrid architecture that integrates the DSSM blocks with conv blocks and gated conv blocks. This approach efficiently leverages the complementary strengths of different blocks by extracting features through convolution blocks at lower layers, while adaptively enhancing visual feature maps using DSSM blocks at higher layers.
+            </p>            
+            <div class="col-xs-12 text-center">
+                <img src="figs/dfmamba_arch.png" width="1000">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-left">
+            <h3>Results for 3D Hand Pose Estimation</h3>           
+            <p style="font-size: 16px">            
+            We evaluate our approach by integrating representative 3D hand pose estimation frameworks and replacing their original backbones. Specifically, we adopt A2J-Transformer for InterHand2.6M, RHP, and NYU, and DetNet for DexYCB and AssemblyHands. Our proposed DF-Mamba consistently outperforms both vision transformer–based and Mamba-based backbones across all benchmarks. Moreover, DF-Mamba retains a model size and runtime comparable to ResNet-50, demonstrating its efficiency.
+            </p>
+            <div class="col-xs-12 text-center">
+                <img src="figs/table.png" width="1000">
+            </div>
+            <div class="col-xs-12 text-center">
+                <img src="figs/qual.png" width="1000">
+            </div>
+        </div>
+    </div>
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+          <td style="padding:0px">
+            <br>
+            <p style="text-align:right;font-size:small;float:right;">
+              © Takehiko Ohkawa
+            </p>
+            <p style="text-align:left;font-size:small;">
+                <a href="https://tkhkaeio.github.io/">< Home</a>
+            </p>
+          </td>
+        </tr>
+      </tbody></table>
+
+  </div>
+
+</body>
+</html>

@@ -2,6 +2,6 @@
   author      = {Takehiko Ohkawa and Jihyun Lee and Shunsuke Saito and Jason Saragih and Fabian Prada and Yichen Xu and Shoou-I Yu and Ryosuke Furuta and Yoichi Sato and Takaaki Shiratori},
   title       = {Generative Modeling of Shape-Dependent Self-Contact Human Poses},
   booktitle   = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-  pages       = {xx--xxx},
+  pages       = {5426--5436},
   year        = {2025},
 }

@@ -1,0 +1,7 @@
+@inproceedings{zhou:wacv26,
+    title={{DF-Mamba}: Deformable State Space Modeling for {3D} Hand Pose Estimation in Interactions},
+    author={Yifan Zhou and Takehiko Ohkawa and Guwenxiao Zhou and Kanoko Goto and Takumi Hirose and Yusuke Sekikawa and Nakamasa Inoue},
+    booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+    pages={xxx--xxx},
+    year={2026},
+}
