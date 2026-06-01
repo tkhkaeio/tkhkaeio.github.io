@@ -1,0 +1,6 @@
+.DS_Store
+**/.DS_Store
+
+# Large binaries hosted on GitHub Releases instead of in-repo
+# thesis_full.pdf -> https://github.com/tkhkaeio/tkhkaeio.github.io/releases/tag/phd-thesis
+projects/25-thesis/pdf/thesis_full.pdf
