@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AffHandGen: Affordance-Guided Diffusion Prior for 3D Hand Reconstruction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="AffHandGen uses affordance-aware text and image features to refine 3D hand reconstruction under occlusion.">
+    <meta property="og:title" content="AffHandGen: Affordance-Guided Diffusion Prior for 3D Hand Reconstruction">
+    <meta property="og:description" content="A multimodal diffusion prior for affordance-guided 3D hand reconstruction.">
+    <meta property="og:url" content="https://tkhkaeio.github.io/projects/26-affhandgen/">
+    <meta property="og:image" content="https://tkhkaeio.github.io/projects/26-affhandgen/figs/teaser.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+    <style>
+        .project-section { margin: 46px 0 0; }
+        .project-section p, .project-section li { font-size: 16px; line-height: 1.65; }
+        .project-figure { display: block; width: 100%; max-width: 1100px; height: auto; margin: 20px auto; }
+        @media (max-width: 767px) {
+            .project-section { margin-top: 34px; }
+            .project-section p, .project-section li { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <br>
+                <h1>Affordance-Guided Diffusion Prior for 3D Hand Reconstruction</h1>
+                <br>
+                <h4>
+                    Naru&nbsp;Suzuki<sup>1*</sup>&emsp;
+                    Takehiko&nbsp;Ohkawa<sup>1*</sup>&emsp;
+                    Tatsuro&nbsp;Banno<sup>1</sup>&emsp;
+                    Jihyun&nbsp;Lee<sup>2</sup>&emsp;
+                    Ryosuke&nbsp;Furuta<sup>1</sup>&emsp;
+                    Yoichi&nbsp;Sato<sup>1</sup>
+                </h4>
+            </div>
+            <div class="col-xs-12 text-center">
+                <h4>
+                    <sup>1</sup>The University of Tokyo &emsp;
+                    <sup>2</sup>KAIST
+                    <span class="col-xs-12 text-center" style="font-size: 14px;"><sup>*</sup>Equal Contribution</span>
+                </h4>
+            </div>
+            <div class="col-xs-12 text-center">
+                <h4>European Conference on Computer Vision (<b>ECCV</b>), 2026</h4>
+            </div>
+            <div class="col-xs-12 text-center">
+                <h4>
+                    <a href="https://arxiv.org/abs/2510.00506" style="font-size: 14pt;">[Paper]</a>
+                </h4>
+            </div>
+        </div>
+
+        <div class="row project-section">
+            <div class="col-xs-12">
+                <img class="project-figure" src="./figs/teaser.png" alt="AffHandGen refines an initial hand pose using image and affordance-description inputs">
+            </div>
+        </div>
+
+        <div class="row project-section">
+            <div class="col-xs-12">
+                <h3>Abstract</h3>
+                <p>
+                    How can we infer a 3D hand pose when large portions of the hand are heavily occluded by itself or by objects? Humans often resolve such ambiguities by leveraging contextual knowledge—such as affordances, where an object’s shape and function suggest how the object is typically grasped. We propose a generative prior for 3D hand pose modeling guided by affordance-aware textual descriptions of hand-object interactions. AffHandGen learns the distribution of plausible hand poses conditioned on contextual signals from affordance descriptions and image features, then refines an initial reconstruction into a more accurate and functionally coherent estimate. Experiments on HOGraspNet and HO3D show improvements over recent foundation models for hand reconstruction and diffusion priors, especially under severe occlusion.
+                </p>
+            </div>
+        </div>
+
+        <div class="row project-section">
+            <div class="col-xs-12">
+                <h3>Affordance-Aware Description Generation</h3>
+                <p>
+                    A standard image caption such as “a hand holds a plate” misses the fine-grained context needed to resolve 3D ambiguity. We construct an affordance-aware description in three steps: a VLM extracts object category, shape, size, interaction, and intent; a dedicated classifier predicts grasp taxonomy; and an LLM combines these elements into one interpretable description. The resulting text encodes both the semantic intent and geometric structure of the interaction.
+                </p>
+                <img class="project-figure" src="./figs/generate_aff.png" alt="Comparison between simple VLM captions and affordance-aware description generation">
+            </div>
+        </div>
+
+        <div class="row project-section">
+            <div class="col-xs-12">
+                <h3>Multimodal Diffusion Prior</h3>
+                <p>
+                    AffHandGen models a multimodal prior over 3D hand pose and affordance. A DistilBERT text encoder represents the affordance description, while a ViT-based vision encoder represents the input image. A transformer denoiser integrates pose, text, and image tokens through cross-attention, enabling the diffusion process to generate poses that agree with both visible evidence and the described affordance.
+                </p>
+                <img class="project-figure" src="./figs/arc_proposed.png" alt="AffHandGen transformer denoiser conditioned on text and image tokens">
+            </div>
+        </div>
+
+        <div class="row project-section">
+            <div class="col-xs-12">
+                <h3>Occlusion-Aware Pose Refinement</h3>
+                <p>
+                    Starting from an estimate produced by a hand reconstruction model, AffHandGen refines uncertain joints while preserving visible evidence. It identifies self-occlusion by ray casting on the MANO mesh and object occlusion by comparing projected joints with a SAM2 hand mask. The diffusion prior is then guided by the initial pose, the multimodal condition, and 2D keypoints to correct the ambiguous regions.
+                </p>
+                <img class="project-figure" src="./figs/ref_arch.png" alt="Occlusion-aware refinement with self-occlusion ray casting and hand masks">
+            </div>
+        </div>
+
+        <div class="row project-section">
+            <div class="col-xs-12">
+                <h3>Results</h3>
+                <p>
+                    We evaluate on HOGraspNet and HO3D using 3D and 2D reconstruction metrics. The table reports PA-MPJPE and PA-MPVPE in millimeters, PCK at 5/10/15 pixels, and mesh F-scores at 5/15 mm across low, medium, and high occlusion levels. Bold and underlined entries indicate the best and second-best results.
+                </p>
+                <img class="project-figure" src="./figs/results_table.png" alt="Quantitative 3D hand pose estimation results on HOGraspNet and HO3D">
+            </div>
+            <div class="col-xs-12 project-section">
+                <h3>Qualitative Results</h3>
+                <p>
+                    The figure below compares AffHandGen with the initial WiLoR reconstruction and a fully conditioned InterHandGen baseline on HOGraspNet. Vertex error is color-coded.
+                </p>
+                <img class="project-figure" src="./figs/refine_qual.png" alt="Qualitative refinement results on HOGraspNet">
+            </div>
+        </div>
+
+        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:46px auto 0;"><tbody>
+            <tr>
+                <td style="padding:0">
+                    <p style="text-align:right;font-size:small;float:right;">© Takehiko Ohkawa</p>
+                    <p style="text-align:left;font-size:small;"><a href="https://tkhkaeio.github.io/">&lt; Home</a></p>
+                </td>
+            </tr>
+        </tbody></table>
+    </div>
+</body>
+</html>
