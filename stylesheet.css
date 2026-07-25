@@ -223,6 +223,10 @@ span.highlight {
   margin: 0;
 }
 
+.profile-photo-mobile {
+  display: none;
+}
+
 .close {
   cursor: pointer;
   position: absolute;
@@ -237,4 +241,199 @@ ul {
 li{
   padding-top: 0px;
   margin: 4px 0;
+}
+
+/* Mobile layout: preserve the desktop table presentation while making the
+   reading order, media, and controls fit narrow viewports. */
+@media (max-width: 767px) {
+  body {
+    margin: 0;
+  }
+
+  body > table {
+    width: 100% !important;
+  }
+
+  body > table > tbody > tr > td {
+    padding: 0 16px !important;
+  }
+
+  body,
+  td,
+  th,
+  tr,
+  p,
+  a {
+    font-size: 16px;
+  }
+
+  p {
+    line-height: 1.55;
+  }
+
+  heading {
+    font-size: clamp(21px, 6vw, 22px);
+  }
+
+  name {
+    font-size: clamp(28px, 8vw, 32px);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a,
+  papertitle,
+  .profile-bio,
+  .publication-list td {
+    overflow-wrap: anywhere;
+  }
+
+  .profile-header,
+  .profile-header tbody,
+  .profile-row,
+  .profile-bio,
+  .profile-photo {
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box;
+  }
+
+  .profile-bio {
+    padding: 12px 0 0 !important;
+  }
+
+  .profile-photo {
+    padding: 20px 0 8px !important;
+    text-align: center;
+  }
+
+  .profile-photo img {
+    display: inline-block;
+    width: min(100%, 320px) !important;
+    min-width: 0 !important;
+  }
+
+  .profile-photo {
+    display: none;
+  }
+
+  .profile-photo-mobile {
+    display: block;
+    margin: 0 auto 12px;
+    text-align: center;
+  }
+
+  .profile-photo-mobile img {
+    display: inline-block;
+    width: min(100%, 280px);
+  }
+
+  .affiliation-list,
+  .affiliation-list tbody,
+  .affiliation-list tr {
+    display: block;
+    width: 100% !important;
+  }
+
+  .affiliation-list tr {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px 6px;
+    padding: 16px 0 8px;
+  }
+
+  .affiliation-list td {
+    display: flex;
+    width: auto !important;
+    min-width: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .affiliation-list img {
+    width: auto !important;
+    max-width: min(100%, 132px);
+    max-height: 52px;
+    object-fit: contain;
+  }
+
+  .affiliation-list figcaption {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .publication-list,
+  .publication-list tbody,
+  .publication-list tr,
+  .publication-list td {
+    display: block;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .publication-list tr {
+    padding: 14px 0;
+  }
+
+  .publication-list td {
+    padding: 8px 0 !important;
+  }
+
+  .publication-list td:first-child {
+    text-align: center;
+  }
+
+  .publication-list .one {
+    width: min(100%, 220px);
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .publication-list .one img {
+    width: min(100%, 220px) !important;
+    height: auto !important;
+    max-height: 180px;
+    object-fit: contain;
+  }
+
+  papertitle {
+    display: inline;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .publication-list td > a {
+    display: inline-block;
+    padding: 8px 4px;
+    line-height: 1.4;
+  }
+
+  .publication-list td > a:has(papertitle) {
+    display: inline;
+    padding: 0;
+  }
+
+  .window {
+    width: calc(100vw - 32px);
+    max-width: 750px;
+    height: min(70vh, 320px);
+    padding: 24px 16px 16px;
+    box-sizing: border-box;
+  }
+
+  .bibtex {
+    width: 100%;
+    max-height: 100%;
+    overflow: auto;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 22px;
+  }
 }

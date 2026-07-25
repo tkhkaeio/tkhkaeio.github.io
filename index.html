@@ -29,16 +29,19 @@
 <table style="width:100%;max-width:950px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
         <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-                <td style="padding: 0% 2.5% 0% 2.5%;width:63%;vertical-align:middle">
+        <table class="profile-header" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr class="profile-row" style="padding:0px">
+                <td class="profile-bio" style="padding: 0% 2.5% 0% 2.5%;width:63%;vertical-align:middle">
                 <p style="text-align:center">
                     <name>Take Ohkawa</name>
                 </p>
+                <div class="profile-photo-mobile">
+                    <img src="./photos/2025_portait_wide.JPG" alt="Take Ohkawa">
+                </div>
                 <p>
                     Hi, I'm a Research Scientist at <a href="https://www.airoa.org/">AIRoA</a>, working on Vision-Language-Action (VLA) systems. I also work as a Cooperative Research Fellow at the Institute of Industrial Science, UTokyo.
-                    <br><br>
-
+                </p>
+                <p>
                     I received my PhD from UTokyo in 2025, advised by Prof. <a href="https://sites.google.com/ut-vision.org/ysato/home?authuser=0">Yoichi Sato</a>.
                     During my PhD journey, I served as <a href="https://research.google/programs-and-events/phd-fellowship/recipients/?filtertab=2024">Google PhD Fellow</a> in 2024.                    
                     I joined Prof. <a href="https://people.inf.ethz.ch/pomarc/">Marc Pollefeys</a> lab at ETH Zurich in 2023, and Prof. <a href="http://www.cs.cmu.edu/~kkitani/">Kris Kitani</a> lab at CMU in 2021. 
@@ -50,9 +53,8 @@
                     I received <a href="https://www.jsps.go.jp/english/e-ikushi-prize/awards.html">JSPS Ikushi Prize</a> and Dean's & Chair's Awards from UTokyo in 2026, and EgoVis Distinguished Paper Award at CVPR 2025.
                     My PhD research was supported by fellowships from Google (2024), Microsoft Research Asia (2023), and ETH Zurich Leading House Asia (2023). 
                     I served as Principal Investigator of JST ACT-X Project (2020-2023) and JSPS Research Fellow (DC1) (2022-2024).
-                    <br>
-                </p>                
-                <p style="text-align:left">
+                </p>
+                <p id="contact" style="text-align:left">
                     E-mail: tohkawa [dot] contact [at] gmail [dot] com<br>
                     <!-- <a href="mailto:xxx@x.com">Email</a> &nbsp/&nbsp -->                    
                     <!-- <a href="xxx.txt">Bio</a> &nbsp/&nbsp -->
@@ -65,7 +67,7 @@
                 </p>
                 </td>
                 <!-- Profile image -->
-                <td style="padding:2.5%;width:35%;max-width:35%;">                  
+                <td class="profile-photo" style="padding:2.5%;width:35%;max-width:35%;">
                     <img
                     style="width:100%;max-width:100%;min-width:100%"
                     src="./photos/2025_portait_wide.JPG"
@@ -76,7 +78,7 @@
             </tr>
             </tbody>
             </table>
-            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0" style="margin-top:0px;">
+            <table class="affiliation-list" width="100%" align="center" border="0" cellspacing="0" cellpadding="0" style="margin-top:0px;">
             <tr>
                 <!-- airoa -->
                 <td width="10%" valign="middle" align="center">
@@ -121,7 +123,7 @@
                 </td>                      -->
             </tr>
             </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <table id="news" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
                 <td style="padding:10px 20px 10px 20px;width:100%;vertical-align:middle">
                 <heading>News</heading>
@@ -174,7 +176,7 @@
             </tr>
             </tbody></table>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <table id="research" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
                 <td style="padding:10px 20px 20px 20px;width:100%;vertical-align:middle">
                 <heading>Research</heading>
@@ -203,7 +205,7 @@
         </tbody>
         </table> -->
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <table id="publications" class="publication-list" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <!-- <tbody>
                 <td style="padding:20px;width:25%;vertical-align:middle">
                     <div class="one">                    
