@@ -84,7 +84,8 @@ img {
   /* max-height: 800px; */
 }
 
-figcaption {
+.affiliation-caption {
+  display: block;
   /* background-color: #222; */
   /* opacity: 0.7; */
   /* color: #fff; */
@@ -130,25 +131,52 @@ strong {
   font-size: 14px;
 }
 
-heading {
+.section-heading {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 22px;
+  display: inline;
+  margin: 0;
+  font-weight: 400;
 }
 
-subheading {
+.subheading {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 18px;
+  display: inline;
+  margin: 0;
+  font-weight: 400;
 }
 
-papertitle {
+.paper-title {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
-  font-weight: 700
+  font-weight: 700;
+  display: inline;
 }
 
-name {
+.site-name {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 32px;
+  display: inline;
+  margin: 0;
+  font-weight: 400;
+}
+
+.profile-name {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.publication-teaser {
+  padding: 20px;
+  width: 25%;
+  vertical-align: middle;
+}
+
+.publication-details {
+  padding: 20px;
+  width: 75%;
+  vertical-align: middle;
 }
 
 .one {
@@ -271,11 +299,11 @@ li{
     line-height: 1.55;
   }
 
-  heading {
+  .section-heading {
     font-size: clamp(21px, 6vw, 22px);
   }
 
-  name {
+  .site-name {
     font-size: clamp(28px, 8vw, 32px);
   }
 
@@ -285,7 +313,7 @@ li{
   }
 
   a,
-  papertitle,
+  .paper-title,
   .profile-bio,
   .publication-list td {
     overflow-wrap: anywhere;
@@ -362,7 +390,7 @@ li{
     object-fit: contain;
   }
 
-  .affiliation-list figcaption {
+  .affiliation-list .affiliation-caption {
     font-size: 12px;
     line-height: 1.2;
   }
@@ -401,7 +429,7 @@ li{
     object-fit: contain;
   }
 
-  papertitle {
+  .paper-title {
     display: inline;
     font-size: 16px;
     line-height: 1.35;
@@ -413,7 +441,7 @@ li{
     line-height: 1.4;
   }
 
-  .publication-list td > a:has(papertitle) {
+  .publication-list td > a:has(.paper-title) {
     display: inline;
     padding: 0;
   }
