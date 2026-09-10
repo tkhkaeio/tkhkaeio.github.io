@@ -1,12 +1,14 @@
-@techreport{ohkawa2026yubi,
+@inproceedings{ohkawa2026yubi,
   author      = {Takehiko Ohkawa and Jumpei Arima and Yuki Noguchi and
                  Masatoshi Tateno and Makoto Sugiura and Takuya Okubo and
                  Kengo Ikeuchi and Yuma Shin and Hiroki Nishizawa and
                  Naoaki Kanazawa and Yuki Wakayama and Daiki Fukunaga and
                  Koshi Makihara and Tomohiro Motoda and Floris Erich and
-                 Yukiyasu Domae and Tatsuya Matsushima and Yohishiro Okumatsu and
+                 Yukiyasu Domae and Tatsuya Matsushima and Yoshihiro Okumatsu and
                  Kei Ota},
   title       = {{YUBI}: Yielding Universal Bidigital Interface for
                  Bimanual Dexterous Manipulation at Scale},
+  booktitle   = {Conference on Robot Learning (CoRL)},
   year        = {2026},
+  url         = {https://arxiv.org/abs/2606.10244},
 }
