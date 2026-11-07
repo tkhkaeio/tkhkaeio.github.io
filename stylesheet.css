@@ -185,6 +185,22 @@ strong {
   position: relative;
 }
 
+.publication-list .one {
+  width: 220px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.publication-list .one img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 .two {
   width: 160px;
   height: 160px;
