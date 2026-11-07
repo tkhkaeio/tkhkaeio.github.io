@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+	body {
+		font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight: 300;
+		font-size: 17px;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 980px;
+	}
+
+	h1 {
+		font-weight: 300;
+		line-height: 1.15em;
+	}
+
+	h2 {
+		font-size: 1.75em;
+	}
+
+	a:link,
+	a:visited {
+		color: #1367a7;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: #208799;
+	}
+
+	h1,
+	h2,
+	h3 {
+		text-align: center;
+	}
+
+	h1 {
+		font-size: 40px;
+		font-weight: 500;
+	}
+
+	h2,
+	h3 {
+		font-weight: 400;
+		margin: 16px 0px 4px 0px;
+	}
+
+	.paper-title {
+		padding: 16px 0px 16px 0px;
+	}
+
+	section {
+		margin: 32px 0px 32px 0px;
+		text-align: justify;
+		clear: both;
+	}
+
+	.col-5 {
+		width: 20%;
+		float: left;
+	}
+
+	.col-4 {
+		width: 25%;
+		float: left;
+	}
+
+	.col-3a {
+		width: 33.3%;
+		float: left;
+		text-align: right;
+	}
+
+	.col-3b {
+		width: 33.3%;
+		float: left;
+		text-align: center;
+	}
+
+	.col-3c {
+		width: 33.3%;
+		float: left;
+		text-align: left;
+	}
+
+	.col-2 {
+		width: 50%;
+		float: left;
+	}
+
+	.row,
+	.author-row,
+	.affil-row {
+		overflow: auto;
+	}
+
+	.author-row,
+	.affil-row {
+		font-size: 20px;
+	}
+
+	.row {
+		margin: 16px 0px 16px 0px;
+	}
+
+	#news .row {
+		overflow: visible;
+	}
+
+	#news .row > div {
+		display: flex;
+		align-items: flex-start;
+		gap: 4px;
+		text-align: left;
+	}
+
+	.authors {
+		font-size: 18px;
+	}
+
+	.affil-row {
+		margin-top: 16px;
+	}
+
+	.teaser {
+		max-width: 100%;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	.screenshot {
+		width: 256px;
+		border: 1px solid #ddd;
+	}
+
+	.screenshot-el {
+		margin-bottom: 16px;
+	}
+
+	hr {
+		height: 1px;
+		border: 0;
+		border-top: 1px solid #ddd;
+		margin: 0;
+	}
+
+	.material-icons {
+		vertical-align: -6px;
+	}
+
+	.material-symbols-outlined {
+		vertical-align: -6px;
+		font-variation-settings:
+			'FILL' 1,
+			'wght' 400,
+			'GRAD' 0,
+			'opsz' 24
+	}
+
+	p {
+		line-height: 1.25em;
+	}
+
+	.caption_justify {
+		text-align: justify;
+		margin-top: 0px;
+		margin-bottom: 64px;
+	}
+
+	.caption {
+		font-size: 16px;
+		color: #666;
+		text-align: center;
+		margin-top: 8px;
+		margin-bottom: 64px;
+	}
+
+	.caption_inline {
+		font-size: 16px;
+		color: #666;
+		text-align: center;
+		margin-top: 8px;
+		margin-bottom: 0px;
+	}
+
+	.caption_bold {
+		font-size: 16px;
+		color: #666;
+		text-align: center;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		font-weight: bold;
+	}
+
+	video {
+		display: block;
+		margin: auto;
+	}
+
+	figure {
+		display: block;
+		margin: auto;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	#bibtex pre {
+		font-size: 14px;
+		background-color: #eee;
+		padding: 16px;
+	}
+
+	.blue {
+		color: #2c82c9;
+		font-weight: bold;
+	}
+
+	.orange {
+		color: #d35400;
+		font-weight: bold;
+	}
+
+	.flex-row {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	.paper-btn {
+		position: relative;
+		text-align: center;
+
+		display: inline-block;
+		margin: 8px;
+		padding: 8px 8px;
+
+		border-width: 0;
+		outline: none;
+		border-radius: 2px;
+
+		background-color: #1367a7;
+		color: #ecf0f1 !important;
+		font-size: 20px;
+		width: 100px;
+		font-weight: 600;
+	}
+
+	.paper-btn-parent {
+		display: flex;
+		justify-content: center;
+		margin: 16px 0px;
+	}
+
+	.paper-btn:hover {
+		opacity: 0.85;
+	}
+
+	.paper-btn.disabled {
+		background-color: #9e9e9e;
+		color: #ffffff !important;
+		cursor: default;
+	}
+
+	.paper-btn.disabled:hover {
+		opacity: 1;
+	}
+
+	.container {
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	@media (max-width: 600px) {
+		h1 {
+			font-size: 28px;
+		}
+
+		.col-5 {
+			width: 50%;
+			margin-left: 0 !important;
+		}
+
+		.affil-row span {
+			display: inline-block;
+			margin: 0 8px !important;
+		}
+
+		.paper-btn {
+			margin: 4px;
+			padding: 8px 4px;
+		}
+	}
+</style>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic'
+	rel='stylesheet' type='text/css'>
+
+	<title>AssemblyHands-X: Modeling Hand, Body, and Visual Context for Understanding Bimanual Human Activities</title>
+	<meta property="og:description"
+		content="AssemblyHands-X: Modeling Hand, Body, and Visual Context for Understanding Bimanual Human Activities" />
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="paper-title">
+			<h1>AssemblyHands-X: Modeling Hand, Body, and Visual Context for Understanding Bimanual Human Activities</h1>
+		</div>
+
+		<div id="authors">
+			<div class="author-row">
+				<div class="col-5 text-center"><a href="https://tatsubanno.github.io/">Tatsuro Banno<sup>1</sup></a></div>
+				<div class="col-5 text-center"><a href="https://tkhkaeio.github.io/">Takehiko Ohkawa<sup>1</sup></a>
+				</div>
+				<div class="col-5 text-center"><a href="https://narusuzuki.github.io/">Naru Suzuki<sup>1</sup></a></div>
+				<div class="col-5 text-center"><a href="https://ruicongliu.github.io/">Ruicong Liu<sup>1</sup></a></div>
+				<div class="col-5 text-center"><a href="https://taeinkwon.com/">Taein Kwon<sup>2</sup></a></div>
+				<div class="col-5 text-center" style="margin-left: 10%"><a href="https://kunhe.github.io/">Kun He<sup>3</sup></a></div>
+				<div class="col-5 text-center"><a href="https://dahlian00.github.io/">Risa Shinoda<sup>1</sup></a></div>
+				<div class="col-5 text-center"><a href="https://rfuruta.github.io/">Ryosuke Furuta<sup>1</sup></a></div>
+				<div class="col-5 text-center"><a href="https://sites.google.com/ut-vision.org/ysato/">Yoichi Sato<sup>1</sup></a></div>
+			</div>
+
+			<div class="affil-row">
+				<div class="text-center">
+					<span><sup>1</sup>The University of Tokyo</span>
+					<span style="margin-left: 32px"><sup>2</sup>University of Oxford</span>
+					<span style="margin-left: 32px"><sup>3</sup>Meta Reality Labs</span>
+				</div>
+			</div>
+
+			<div class="affil-row">
+				<div class="text-center"><strong style="color: darkblue;">WACV 2027</strong></div>
+			</div>
+
+			<div style="clear: both">
+				<div class="paper-btn-parent">
+					<a class="paper-btn disabled" aria-disabled="true">
+						<span class="material-symbols-outlined"> description </span>
+						arXiv
+					</a>
+					<a class="paper-btn disabled" aria-disabled="true">
+						<span class="material-symbols-outlined"> file_download </span>
+						Dataset
+					</a>
+					<a class="paper-btn disabled" aria-disabled="true">
+						<span class="material-symbols-outlined"> code </span>
+						Code
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<section id="teaser-videos">
+
+			<figure style="width: 100%; float: left">
+				<div style="position: relative; padding-top: 56.25%;">
+					<iframe src="https://www.youtube.com/embed/X4FGwTXcM2g?autoplay=1&mute=1&playsinline=1"
+						title="YouTube video player"
+						style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0;"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						referrerpolicy="strict-origin-when-cross-origin"
+						allowfullscreen></iframe>
+				</div>
+			</figure>
+
+			<figure style="width: 100%; float: left">
+				<p class="caption_justify">
+					We introduce <em>AssemblyHands-X</em>, the first markerless 3D hand-body benchmark for understanding bimanual activities, enabling a systematic study of the hands, body, and visual context beyond the existing annotations of the original Assembly101 and AssemblyHands.
+				</p>
+			</figure>
+		</section>
+
+		<section id="news">
+			<h2>News</h2>
+			<hr>
+			<div class="row">
+				<div><span class="material-symbols-outlined"> description </span> [Oct
+					28th 2026] Project page released.
+				</div>
+			</div>
+		</section>
+
+		<section id="abstract">
+			<h2>Abstract</h2>
+			<hr>
+			<p>
+				Bimanual human activities inherently involve coordinated movements of the hands and body, which are also grounded in the surrounding visual context such as the objects being manipulated. Despite this tight coordination, existing benchmarks are not designed to study this synergy systematically: annotating either hand or body pose alone, or relying on marker-based capture that alters the visual appearance away from natural recordings. To bridge this gap, we introduce <em>AssemblyHands-X</em>, the first markerless 3D hand-body benchmark for understanding bimanual human activities. Building on the multi-view markerless videos of the Assembly101 dataset, we reconstruct temporally consistent SMPL-X hand-body motion for 2.8M images through a multi-view annotation pipeline. Using this dataset, we systematically analyze how the synergy among hand, body, and visual cues influences bimanual action recognition. Through experiments with multi-view
+annotated poses on AssemblyHands-X and single-view estimated poses on the large-scale Assembly101 dataset, we show that (1) combining 3D hand and body cues significantly improves verb recognition, and (2) modeling these pose cues jointly with video further boosts action recognition performance. These findings highlight the importance of modeling multimodal synergy for a holistic understanding of bimanual activities.
+			</p>
+		</section>
+
+	</div>
+</body>
+
+</html>
